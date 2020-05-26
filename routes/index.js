@@ -17,8 +17,7 @@ router.get('/', function(req, res, next) {
 
 router.get("/health", async function(req, res){
   res.writeHead(200, {
-    'Content-Type': 'text/plain',
-    'Content-Length': 2
+    'Content-Type': 'text/plain'
   });
 
   const ips = ip.address();
@@ -26,5 +25,10 @@ router.get("/health", async function(req, res){
   res.write('OK ' + ips);
   res.end();
 });
+
+/*res.writeHead(200, {
+  'Content-Type': 'text/plain',
+  'Content-Length': 2
+});*/
 
 module.exports = router;
