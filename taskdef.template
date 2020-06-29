@@ -1,9 +1,9 @@
 {
-  "executionRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/FargateSampleStack-fargateSampleServiceTaskDefExec-O986KJYL4SK7",
+  "executionRoleArn": "arn:aws:iam::482825264322:role/service-role/codebuild-codepipebuild-service-role",
   "containerDefinitions": [
     {
       "name": "web",
-      "image": "<IMAGE1_NAME>",
+      "image": "482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest",
       "portMappings": [
         {
           "containerPort": 80,
