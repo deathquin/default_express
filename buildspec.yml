@@ -19,7 +19,7 @@ phases:
       - echo Pushing the Docker image...
       - docker push 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"ContainerTest","imageUri":"%s"}]' REPOSITORY_URI:${IMAGE_TAG} > imagedefinitions.json
+      - printf '[{"name":"ContainerTest","imageUri":"%s"}]' ${REPOSITORY_URI}:${IMAGE_TAG} > imagedefinitions.json
       - envsubst < taskdef.template > taskdef.json
 
 artifacts:
