@@ -17,7 +17,7 @@
         "secretOptions": [],
         "options": {
           "awslogs-group": "FargateSampleStack-fargateSampleServiceTaskDefwebLogGroup8ABD1DA8-ENXA20FCTY9H",
-          "awslogs-region": "ap-northeast-1",
+          "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "fargateSampleService"
         }
       }
