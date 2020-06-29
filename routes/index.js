@@ -22,7 +22,7 @@ router.get("/health", async function(req, res){
 
   const ips = ip.address();
 
-  res.write('OK ' + ips);
+  res.write('OK1 ' + ips);
   res.end();
 });
 
