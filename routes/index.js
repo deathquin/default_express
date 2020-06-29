@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
   const ips = ip.address();
 
-  res.write('OK '+ips);
+  res.write('OK12345 '+ips);
   res.end();
   /*res.render('index', { title: 'Express' });*/
 });
@@ -22,7 +22,7 @@ router.get("/health", async function(req, res){
 
   const ips = ip.address();
 
-  res.write('OK1 ' + ips);
+  res.write('OK12 ' + ips);
   res.end();
 });
 
