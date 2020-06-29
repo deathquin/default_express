@@ -1,8 +1,10 @@
 {
+  "family": "FargateSampleStackfargateSampleServiceTaskDefE9CB3C64",
   "executionRoleArn": "arn:aws:iam::482825264322:role/service-role/codebuild-codepipebuild-service-role",
-  "containerDefinitions": [
-    {
+  "containerDefinitions": [{
       "name": "web",
+      "cpu": "10",
+      "memory": "128",
       "image": "482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest",
       "portMappings": [
         {
@@ -12,13 +14,5 @@
         }
       ],
       "essential": true
-    }
-  ],
-  "family": "FargateSampleStackfargateSampleServiceTaskDefE9CB3C64",
-  "networkMode": "awsvpc",
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
-  "cpu": "10",
-  "memory": "128"
+    }]
 }
