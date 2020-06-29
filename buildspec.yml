@@ -18,11 +18,9 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push ${REPOSITORY_URI}:latest
-      - docker push ${REPOSITORY_URI}:${IMAGE_TAG}
       - echo Writing image definitions file...
       - printf '[{"name":"ContainerTest","imageUri":"%s"}]' ${REPOSITORY_URI}:latest > imagedefinitions.json
       - envsubst < taskdef.template > taskdef.json
-
 artifacts:
   files:
     - imagedefinitions.json
