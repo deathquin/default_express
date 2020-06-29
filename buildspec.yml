@@ -7,7 +7,6 @@ phases:
       - REPOSITORY_URI=482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository
       - REPOSITORY_NAME=demo-repository
       - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com
-      - IMAGE_NAME="imageapi"
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:

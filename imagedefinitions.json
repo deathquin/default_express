@@ -3,8 +3,6 @@
   "executionRoleArn": "arn:aws:iam::482825264322:role/service-role/codebuild-codepipebuild-service-role",
   "containerDefinitions": [{
       "name": "web",
-      "cpu": "10",
-      "memory": "128",
       "image": "482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest",
       "portMappings": [{
           "containerPort": 80,
@@ -12,5 +10,11 @@
           "protocol": "tcp"
         }],
       "essential": true
-    }]
+    }],
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": 10,
+  "memory": 128
 }
