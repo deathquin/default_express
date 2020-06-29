@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push ${REPOSITORY_URI}/${REPOSITORY_NAME}:${IMAGE_TAG}
+      - docker push 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest
       - echo Writing image definitions file...
       - printf '{"ImageURI":"%s"}' ${REPOSITORY_URI}/${REPOSITORY_NAME}:${IMAGE_TAG} > imageDetail.json
       - envsubst < taskdef.template > taskdef.json
