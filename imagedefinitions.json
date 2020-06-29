@@ -6,13 +6,11 @@
       "cpu": "10",
       "memory": "128",
       "image": "482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest",
-      "portMappings": [
-        {
+      "portMappings": [{
           "containerPort": 80,
           "hostPort": 80,
           "protocol": "tcp"
-        }
-      ],
+        }],
       "essential": true
     }]
 }
