@@ -7,17 +7,18 @@ phases:
       - REPOSITORY_URI=482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository
       - REPOSITORY_NAME=demo-repository
       - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com
+      - IMAGE_NAME="imageapi"
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t ${REPOSITORY_NAME} .
-      - docker tag ${REPOSITORY_URI}:latest ${REPOSITORY_URI}:IMAGE_TAG
+      - docker tag demo-repository:latest 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push ${REPOSITORY_URI}:latest
+      - docker push 482825264322.dkr.ecr.ap-northeast-2.amazonaws.com/demo-repository:latest
       - echo Writing image definitions file...
       - printf '[{"name":"ContainerTest","imageUri":"%s"}]' ${REPOSITORY_URI}:latest > imagedefinitions.json
       - envsubst < taskdef.template > taskdef.json
