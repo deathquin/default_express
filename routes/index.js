@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
   const ips = ip.address();
 
-  res.write('OK12345101234s '+ips);
+  res.write('OK12345101234s DEATHQUIN '+ips);
   res.end();
   /*res.render('index', { title: 'Express' });*/
 });
